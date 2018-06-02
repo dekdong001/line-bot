@@ -17,8 +17,13 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			//$text="test";
-			$text = $event['source']['userId'];
-			$text = $text.$event['message']['text'];
+			//$text = $event['source']['userId'];
+			//$text = $text.$event['message']['text'];
+			if($event['message']['text']=="ซื้อหวย"){
+				$text = "จะซื้อเลขไรละ";
+			} else {
+				$text = "ใส่คำสั่งไม่ถูกต้อง";
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
